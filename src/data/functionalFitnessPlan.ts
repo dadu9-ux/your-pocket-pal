@@ -183,54 +183,54 @@ const thursdayWorkout: WorkoutDay = {
 const fridayWorkout: WorkoutDay = {
   day: 'Friday',
   type: 'intensive',
-  title: 'Explosive Strength + Power',
-  warmup: '10 min run on treadmill',
-  format: '5 Rounds | 40 seconds on / 20 seconds off | 60 seconds rest between rounds | ~40 min total',
+  title: 'Athletic Agility & Endurance',
+  warmup: '10 min run on treadmill (last 3 min: 30s sprint / 30s jog)',
+  format: 'Circuit Style | 4 Rounds of 3 mini-circuits | 40 seconds work / 20 seconds rest | 60 seconds between mini-circuits | ~40 min',
   exercises: [
     {
-      id: v4Gen(), name: 'KB Clean & Press', weight: '16 kg', duration: '40 seconds', notes: 'alternate arms', sets: 5,
+      id: v4Gen(), name: 'Lateral Box Shuffles', weight: 'Bodyweight', duration: '40 seconds', notes: 'quick feet, stay low', sets: 4,
       variations: [
-        { name: 'KB Push Press', weight: '20 kg', duration: '40 seconds' },
-        { name: 'KB Jerk', weight: '16 kg', duration: '40 seconds' },
+        { name: 'Lateral Bounds', duration: '40 seconds' },
+        { name: 'Carioca Steps', duration: '40 seconds' },
       ],
     },
     {
-      id: v4Gen(), name: 'Pull-ups', weight: 'Bodyweight', duration: '40 seconds', notes: 'bands/negatives if needed', sets: 5,
+      id: v4Gen(), name: 'KB Goblet Squat to Lunge', weight: '16 kg', duration: '40 seconds', notes: 'squat → step back into lunge, alternate', sets: 4,
       variations: [
-        { name: 'Chin-ups', duration: '40 seconds' },
-        { name: 'Neutral Grip Pull-ups', duration: '40 seconds' },
+        { name: 'Walking Lunges', weight: '12 kg each', duration: '40 seconds' },
+        { name: 'Curtsy Lunge to Squat', weight: '16 kg', duration: '40 seconds' },
       ],
     },
     {
-      id: v4Gen(), name: 'Box Jump Step-downs', weight: 'Bodyweight', duration: '40 seconds', notes: 'explosive up, controlled step down', sets: 5,
+      id: v4Gen(), name: 'Sprawl + Squat Jump', weight: 'Bodyweight', duration: '40 seconds', notes: 'chest to floor → explode up', sets: 4,
       variations: [
-        { name: 'Depth Jump to Broad Jump', duration: '40 seconds' },
-        { name: 'Single-leg Box Step-ups', duration: '40 seconds' },
+        { name: 'Burpee + Broad Jump', duration: '40 seconds' },
+        { name: 'Inchworm + Jump', duration: '40 seconds' },
       ],
     },
     {
-      id: v4Gen(), name: 'One-arm KB Swing', weight: '16 kg', duration: '40 seconds', notes: 'explosive hip drive', sets: 5,
+      id: v4Gen(), name: 'KB Figure-8s', weight: '16 kg', duration: '40 seconds', notes: 'weave between legs, stay low', sets: 4,
+      variations: [
+        { name: 'KB Around the World', weight: '16 kg', duration: '40 seconds' },
+        { name: 'KB Halo', weight: '12 kg', duration: '40 seconds' },
+      ],
+    },
+    {
+      id: v4Gen(), name: 'Skater Jumps', weight: 'Bodyweight', duration: '40 seconds', notes: 'max lateral distance, stick landing', sets: 4,
+      variations: [
+        { name: 'Single-leg Hop + Stick', duration: '40 seconds' },
+        { name: 'Lateral Shuffle Touch', duration: '40 seconds' },
+      ],
+    },
+    {
+      id: v4Gen(), name: 'KB Swing to High Pull', weight: '16 kg', duration: '40 seconds', notes: 'explosive hips, elbows high', sets: 4,
       variations: [
         { name: 'KB Snatch', weight: '16 kg', duration: '40 seconds' },
-        { name: 'Double KB Clean', weight: '12 kg each', duration: '40 seconds' },
-      ],
-    },
-    {
-      id: v4Gen(), name: 'Dips', weight: 'Bodyweight', duration: '40 seconds', notes: 'bars or bench', sets: 5,
-      variations: [
-        { name: 'Close-grip Push-ups', duration: '40 seconds' },
-        { name: 'Pike Push-ups', duration: '40 seconds' },
-      ],
-    },
-    {
-      id: v4Gen(), name: 'Burpee + Tuck Jump', weight: 'Bodyweight', duration: '40 seconds', notes: 'max height on tuck', sets: 5,
-      variations: [
-        { name: 'Burpee + Squat Jump', duration: '40 seconds' },
-        { name: 'Sprawl + Star Jump', duration: '40 seconds' },
+        { name: 'KB Clean + Squat', weight: '16 kg', duration: '40 seconds' },
       ],
     },
   ],
-  cooldown: 'Lat stretch, Chest stretch, Hip flexor stretch — 5 min',
+  cooldown: 'Hip flexor stretch, Hamstring stretch, Calf stretch — 5 min',
 };
 
 const saturdayWorkout: WorkoutDay = {
