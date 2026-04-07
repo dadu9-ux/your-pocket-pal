@@ -1,5 +1,6 @@
 import { WorkoutPlan, PlanProgress, WeekProgress, DayProgress } from '@/types/workout';
 import { createDefaultPlan } from '@/data/defaultPlan';
+import { createFunctionalFitnessPlan } from '@/data/functionalFitnessPlan';
 
 const PLAN_KEY = 'kp_plans';
 const PROGRESS_KEY = 'kp_progress';
@@ -8,9 +9,10 @@ const ACTIVE_PLAN_KEY = 'kp_active_plan';
 export function getPlans(): WorkoutPlan[] {
   const raw = localStorage.getItem(PLAN_KEY);
   if (!raw) {
-    const defaultPlan = createDefaultPlan();
-    savePlans([defaultPlan]);
-    return [defaultPlan];
+    const basicPlan = createDefaultPlan();
+    const funcPlan = createFunctionalFitnessPlan();
+    savePlans([basicPlan, funcPlan]);
+    return [basicPlan, funcPlan];
   }
   return JSON.parse(raw);
 }
