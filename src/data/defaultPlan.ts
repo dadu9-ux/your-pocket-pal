@@ -276,7 +276,7 @@ export function createDefaultPlan(): WorkoutPlan {
 
   return {
     id: v4Gen(),
-    name: 'Kettlebell Power',
+    name: 'Kettlebell Power - Basic',
     description: '105 kg → 90 kg • 6 Days/Week Transformation',
     totalWeeks,
     startWeight: 105,
