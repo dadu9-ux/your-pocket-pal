@@ -4,59 +4,57 @@ import { v4Gen } from '@/lib/idgen';
 const mondayWorkout: WorkoutDay = {
   day: 'Monday',
   type: 'intensive',
-  title: 'HIIT Power Circuit',
-  warmup: '10 min run on treadmill (build to 80% last 2 min)',
-  format: '5 Rounds | 40 seconds on / 20 seconds off | 90 seconds rest between rounds | ~40 min total',
+  title: 'Strength & Power — Heavy Grinds',
+  warmup: '10 min run on treadmill (build to 75% last 2 min)',
+  format: 'Strength Focus | 5 Rounds | 40 seconds on / 20 seconds off | 90 seconds rest between rounds | ~40 min',
   exercises: [
     {
-      id: v4Gen(), name: 'Kettlebell Clean & Press', weight: '16 kg', duration: '40 seconds', notes: 'alternate arms each round', sets: 5,
+      id: v4Gen(), name: 'Double KB Front Squat', weight: '16 kg each', duration: '40 seconds', notes: 'controlled tempo, full depth', sets: 5,
+      variations: [
+        { name: 'Goblet Squat', weight: '24 kg', duration: '40 seconds' },
+        { name: 'KB Zercher Squat', weight: '20 kg', duration: '40 seconds' },
+        { name: 'Bulgarian Split Squat', weight: '16 kg', duration: '40 seconds' },
+      ],
+    },
+    {
+      id: v4Gen(), name: 'KB Clean & Press', weight: '16 kg', duration: '40 seconds', notes: 'strict press, alternate arms', sets: 5,
       variations: [
         { name: 'KB Push Press', weight: '20 kg', duration: '40 seconds' },
-        { name: 'KB Thruster', weight: '12 kg each', duration: '40 seconds' },
-        { name: 'Single-arm KB Jerk', weight: '16 kg', duration: '40 seconds' },
+        { name: 'KB Floor Press', weight: '16 kg each', duration: '40 seconds' },
+        { name: 'KB Z-Press (seated)', weight: '12 kg each', duration: '40 seconds' },
       ],
     },
     {
-      id: v4Gen(), name: 'Box Jump Burpees', weight: 'Bodyweight', duration: '40 seconds', notes: 'burpee → box jump → step down', sets: 5,
+      id: v4Gen(), name: 'Pull-ups', weight: 'Bodyweight', duration: '40 seconds', notes: 'strict form, bands if needed', sets: 5,
       variations: [
-        { name: 'Step-up Burpees', duration: '40 seconds' },
-        { name: 'Burpee Broad Jumps', duration: '40 seconds' },
-        { name: 'Tuck Jump Burpees', duration: '40 seconds' },
+        { name: 'Chin-ups', duration: '40 seconds' },
+        { name: 'Weighted Pull-ups', weight: '+5 kg', duration: '40 seconds' },
+        { name: 'Archer Pull-ups', duration: '40 seconds' },
       ],
     },
     {
-      id: v4Gen(), name: 'Kettlebell Snatch', weight: '16 kg', duration: '40 seconds', notes: 'switch arms halfway', sets: 5,
+      id: v4Gen(), name: 'KB Single-leg Deadlift', weight: '16 kg', duration: '40 seconds', notes: 'per side, slow eccentric', sets: 5,
       variations: [
-        { name: 'KB High Pull', weight: '16 kg', duration: '40 seconds' },
-        { name: 'KB Swing to Catch', weight: '16 kg', duration: '40 seconds' },
-        { name: 'Double KB Clean', weight: '12 kg each', duration: '40 seconds' },
+        { name: 'KB Sumo Deadlift', weight: '24 kg', duration: '40 seconds' },
+        { name: 'KB Swing to Deadlift', weight: '20 kg', duration: '40 seconds' },
       ],
     },
     {
-      id: v4Gen(), name: 'Squat Jumps', weight: 'Bodyweight', duration: '40 seconds', notes: 'explosive, full depth', sets: 5,
+      id: v4Gen(), name: 'Ring / Bar Dips', weight: 'Bodyweight', duration: '40 seconds', notes: 'full ROM', sets: 5,
       variations: [
-        { name: 'Jump Lunges', duration: '40 seconds' },
-        { name: 'Goblet Squat Jump', weight: '12 kg', duration: '40 seconds' },
-        { name: 'Prisoner Squat Jumps', duration: '40 seconds' },
+        { name: 'Decline Push-ups', duration: '40 seconds' },
+        { name: 'Diamond Push-ups', duration: '40 seconds' },
       ],
     },
     {
-      id: v4Gen(), name: 'Renegade Rows', weight: '12 kg each', duration: '40 seconds', sets: 5,
+      id: v4Gen(), name: 'Renegade Rows', weight: '12 kg each', duration: '40 seconds', notes: 'no hip rotation', sets: 5,
       variations: [
-        { name: 'Plank Pull-through', weight: '16 kg', duration: '40 seconds' },
         { name: 'KB Bent-over Row', weight: '16 kg each', duration: '40 seconds' },
-      ],
-    },
-    {
-      id: v4Gen(), name: 'Mountain Climbers', weight: 'Bodyweight', duration: '40 seconds', notes: 'fast pace, core tight', sets: 5,
-      variations: [
-        { name: 'Plyo Mountain Climbers', duration: '40 seconds' },
-        { name: 'Cross-body Mountain Climbers', duration: '40 seconds' },
-        { name: 'Spider Climbers', duration: '40 seconds' },
+        { name: 'Gorilla Rows', weight: '16 kg each', duration: '40 seconds' },
       ],
     },
   ],
-  cooldown: 'Pigeon stretch, Couch stretch, Child\'s pose — 5 min',
+  cooldown: 'Pigeon stretch, Couch stretch, Doorway chest stretch — 5 min',
 };
 
 const tuesdayWorkout: WorkoutDay = {
