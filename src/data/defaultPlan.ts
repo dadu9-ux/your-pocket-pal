@@ -63,8 +63,8 @@ const mondayWorkout: WorkoutDay = {
 const tuesdayWorkout: WorkoutDay = {
   day: 'Tuesday',
   type: 'recovery',
-  title: 'Low Intensity Steady State + Loaded Carries',
-  format: 'LISS Cardio: 30-40 minutes | Rower, bike, or incline walk (conversational pace)\nPart B - 3 Rounds:',
+  title: 'Swim + Loaded Carries',
+  format: 'Swimming: 30-40 min (mix freestyle & backstroke, easy pace, focus on breathing)\nOR LISS Cardio: 40 min rower/bike/incline walk\nPart B - 3 Rounds:',
   exercises: [
     {
       id: v4Gen(), name: 'Single-leg Romanian Deadlift', weight: 'Light KB', reps: '10 per side', sets: 3,
@@ -100,40 +100,62 @@ const tuesdayWorkout: WorkoutDay = {
 const wednesdayWorkout: WorkoutDay = {
   day: 'Wednesday',
   type: 'intensive',
-  title: 'Metabolic Kettlebell Complex',
-  warmup: '10 min run on treadmill',
-  format: 'EMOM for 20 minutes - Repeat 5 times',
+  title: 'Metabolic Fat Burn Circuit',
+  warmup: '10 min run on treadmill (build to 80% effort last 2 min)',
+  format: '40 min AMRAP-style circuit | 45 seconds work / 15 seconds rest | 90 seconds rest between rounds | Aim for 5-6 rounds',
   exercises: [
     {
-      id: v4Gen(), name: 'Goblet Squats', weight: '16 kg', reps: '8 reps', sets: 5,
+      id: v4Gen(), name: 'Kettlebell Swing to Burpee', weight: '16 kg', duration: '45 seconds', notes: '5 swings → 1 burpee, repeat', sets: 6,
       variations: [
-        { name: 'Sumo Squat', weight: '20 kg', reps: '8 reps' },
-        { name: 'Front Rack Squat', weight: '12 kg each', reps: '8 reps' },
+        { name: 'Devil Press (KB)', weight: '12 kg each', duration: '45 seconds' },
+        { name: 'Swing + Sprawl', weight: '16 kg', duration: '45 seconds' },
       ],
     },
     {
-      id: v4Gen(), name: 'Alternate Reverse Lunges', weight: '16 kg', reps: '10 reps', sets: 5,
+      id: v4Gen(), name: 'Kettlebell Thruster', weight: '12 kg each', duration: '45 seconds', notes: 'full depth squat to press', sets: 6,
       variations: [
-        { name: 'Walking Lunges', weight: '12 kg each', reps: '10 reps' },
-        { name: 'Curtsy Lunges', weight: '12 kg', reps: '10 reps' },
+        { name: 'Single KB Thruster', weight: '16 kg', duration: '45 seconds', notes: 'alternate sides each round' },
+        { name: 'Goblet Squat to Press', weight: '20 kg', duration: '45 seconds' },
       ],
     },
     {
-      id: v4Gen(), name: 'Kettlebell Swings', weight: '16 kg', reps: '12 reps (two-hand)', sets: 5,
+      id: v4Gen(), name: 'Mountain Climbers', weight: 'Bodyweight', duration: '45 seconds', notes: 'fast pace', sets: 6,
       variations: [
-        { name: 'American Swings', weight: '12 kg', reps: '10 reps' },
-        { name: 'Dead-stop Swings', weight: '20 kg', reps: '8 reps' },
+        { name: 'Plyo Lunges', duration: '45 seconds' },
+        { name: 'Skater Jumps', duration: '45 seconds' },
+        { name: 'High Knees', duration: '45 seconds' },
+      ],
+    },
+    {
+      id: v4Gen(), name: 'Kettlebell Snatch', weight: '16 kg', duration: '45 seconds', notes: 'switch arms halfway', sets: 6,
+      variations: [
+        { name: 'KB High Pull', weight: '16 kg', duration: '45 seconds' },
+        { name: 'KB Clean to Squat', weight: '16 kg', duration: '45 seconds' },
+      ],
+    },
+    {
+      id: v4Gen(), name: 'Burpee Broad Jumps', weight: 'Bodyweight', duration: '45 seconds', sets: 6,
+      variations: [
+        { name: 'Box Jump Burpees', duration: '45 seconds' },
+        { name: 'Step-back Burpees + Tuck Jump', duration: '45 seconds' },
+      ],
+    },
+    {
+      id: v4Gen(), name: 'Battle Ropes / KB Alternating Swings', weight: '12 kg each', duration: '45 seconds', sets: 6,
+      variations: [
+        { name: 'Rope Slams', duration: '45 seconds' },
+        { name: 'KB Figure-8s', weight: '16 kg', duration: '45 seconds' },
       ],
     },
   ],
-  optionB: 'Kettlebell 300 - For Time:\n• Kettlebell Swings: 100 reps\n• Goblet Squats: 75 reps\n• Clean & Press: 50 reps (alternate)\n• Burpees: 25 reps (step back)\n\nFinisher: Dead Hang - 3 sets × 30 seconds',
+  optionB: 'Tabata Finisher (4 min):\n• 20s ON / 10s OFF × 8 rounds\n• Alternate: KB Swings + Burpees\n\nCooldown: 5 min walk + stretch',
 };
 
 const thursdayWorkout: WorkoutDay = {
   day: 'Thursday',
   type: 'recovery',
-  title: 'Rowing + Core',
-  format: 'Easy Row: 20 min (18-20 SPM) | 90/90 Hip Stretches: 10 min | Couch Stretch: 2 min each | Deep Squat Hold: 2 min\nCore Finisher:',
+  title: 'Swim / Row + Core',
+  format: 'Swimming: 30-40 min (drill focus: catch-up drill, kick sets, easy intervals)\nOR Easy Row: 30 min (18-20 SPM)\n90/90 Hip Stretches: 10 min | Couch Stretch: 2 min each | Deep Squat Hold: 2 min\nCore Finisher:',
   exercises: [
     {
       id: v4Gen(), name: 'Hanging Knee Raises', weight: 'Bodyweight', reps: '10 reps', sets: 3,
@@ -203,8 +225,8 @@ const fridayWorkout: WorkoutDay = {
 const saturdayWorkout: WorkoutDay = {
   day: 'Saturday',
   type: 'recovery',
-  title: 'Endurance + Technique',
-  format: 'Conditioning (30 min): Row 5×500m or Bike 4×4min threshold\nKettlebell Technique (15 min):',
+  title: 'Swim / Endurance + Technique',
+  format: 'Swimming: 40 min (endurance swim: 10×100m with 20s rest, or continuous 1500m)\nOR Conditioning (40 min): Row 5×500m or Bike 5×4min threshold\nKettlebell Technique (15 min):',
   exercises: [
     {
       id: v4Gen(), name: 'Clean & Press Practice', weight: 'Light KB', duration: '10 minutes practice', sets: 1,
