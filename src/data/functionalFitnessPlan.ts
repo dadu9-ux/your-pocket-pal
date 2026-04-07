@@ -97,9 +97,9 @@ const tuesdayWorkout: WorkoutDay = {
 const wednesdayWorkout: WorkoutDay = {
   day: 'Wednesday',
   type: 'intensive',
-  title: 'Metabolic Burn — Minimal Equipment',
+  title: 'Metabolic Conditioning — Fat Torch',
   warmup: '10 min run on treadmill (build to 85% last 3 min)',
-  format: '40 min AMRAP | 45 seconds work / 15 seconds rest | 90 seconds rest between rounds | Aim for 5-6 rounds',
+  format: '40 min AMRAP | 45 seconds work / 15 seconds rest | 90 seconds rest between rounds | 5-6 rounds',
   exercises: [
     {
       id: v4Gen(), name: 'KB Swing to Burpee', weight: '16 kg', duration: '45 seconds', notes: '5 swings → 1 burpee, repeat', sets: 6,
@@ -111,9 +111,8 @@ const wednesdayWorkout: WorkoutDay = {
     {
       id: v4Gen(), name: 'Box Jump Overs', weight: 'Bodyweight', duration: '45 seconds', notes: 'step down for safety', sets: 6,
       variations: [
-        { name: 'Lateral Box Jumps', duration: '45 seconds' },
+        { name: 'Lateral Box Shuffles', duration: '45 seconds' },
         { name: 'Step-up Jumps', duration: '45 seconds' },
-        { name: 'Depth Jumps', duration: '45 seconds' },
       ],
     },
     {
@@ -124,10 +123,10 @@ const wednesdayWorkout: WorkoutDay = {
       ],
     },
     {
-      id: v4Gen(), name: 'Burpee Broad Jumps', weight: 'Bodyweight', duration: '45 seconds', sets: 6,
+      id: v4Gen(), name: 'Burpee Tuck Jumps', weight: 'Bodyweight', duration: '45 seconds', notes: 'max height on tuck', sets: 6,
       variations: [
-        { name: 'Burpee Tuck Jumps', duration: '45 seconds' },
-        { name: 'Sprawl + Squat Jump', duration: '45 seconds' },
+        { name: 'Burpee Broad Jumps', duration: '45 seconds' },
+        { name: 'Sprawl + Star Jump', duration: '45 seconds' },
       ],
     },
     {
