@@ -5,6 +5,31 @@ import { createFunctionalFitnessPlan } from '@/data/functionalFitnessPlan';
 const PLAN_KEY = 'kp_plans';
 const PROGRESS_KEY = 'kp_progress';
 const ACTIVE_PLAN_KEY = 'kp_active_plan';
+const MIGRATION_KEY = 'kp_migration_version';
+
+const CURRENT_MIGRATION = 2; // bump this when adding new seed plans
+
+function runMigrations(plans: WorkoutPlan[]): WorkoutPlan[] {
+  const version = parseInt(localStorage.getItem(MIGRATION_KEY) || '0', 10);
+  let updated = [...plans];
+
+  if (version < 2) {
+    // Migration 2: ensure Functional Fitness plan exists
+    const hasFunctional = updated.some(p => p.name === 'Functional Fitness');
+    if (!hasFunctional) {
+      updated.push(createFunctionalFitnessPlan());
+    }
+    // Also update the Kettlebell Power plan with latest exercises
+    const kbIndex = updated.findIndex(p => p.name === 'Kettlebell Power - Basic');
+    if (kbIndex >= 0) {
+      const fresh = createDefaultPlan();
+      updated[kbIndex] = { ...fresh, id: updated[kbIndex].id };
+    }
+  }
+
+  localStorage.setItem(MIGRATION_KEY, String(CURRENT_MIGRATION));
+  return updated;
+}
 
 export function getPlans(): WorkoutPlan[] {
   const raw = localStorage.getItem(PLAN_KEY);
@@ -12,9 +37,16 @@ export function getPlans(): WorkoutPlan[] {
     const basicPlan = createDefaultPlan();
     const funcPlan = createFunctionalFitnessPlan();
     savePlans([basicPlan, funcPlan]);
+    localStorage.setItem(MIGRATION_KEY, String(CURRENT_MIGRATION));
     return [basicPlan, funcPlan];
   }
-  return JSON.parse(raw);
+  let plans: WorkoutPlan[] = JSON.parse(raw);
+  const version = parseInt(localStorage.getItem(MIGRATION_KEY) || '0', 10);
+  if (version < CURRENT_MIGRATION) {
+    plans = runMigrations(plans);
+    savePlans(plans);
+  }
+  return plans;
 }
 
 export function savePlans(plans: WorkoutPlan[]) {
