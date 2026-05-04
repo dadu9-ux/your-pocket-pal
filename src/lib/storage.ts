@@ -7,7 +7,7 @@ const PROGRESS_KEY = 'kp_progress';
 const ACTIVE_PLAN_KEY = 'kp_active_plan';
 const MIGRATION_KEY = 'kp_migration_version';
 
-const CURRENT_MIGRATION = 2; // bump this when adding new seed plans
+const CURRENT_MIGRATION = 3; // bump this when adding new seed plans
 
 function runMigrations(plans: WorkoutPlan[]): WorkoutPlan[] {
   const version = parseInt(localStorage.getItem(MIGRATION_KEY) || '0', 10);
@@ -24,6 +24,17 @@ function runMigrations(plans: WorkoutPlan[]): WorkoutPlan[] {
     if (kbIndex >= 0) {
       const fresh = createDefaultPlan();
       updated[kbIndex] = { ...fresh, id: updated[kbIndex].id };
+    }
+  }
+
+  if (version < 3) {
+    // Migration 3: rebuild Functional Fitness plan (9-week cycle with deload + new recovery + rotating Sat swims)
+    const ffIndex = updated.findIndex(p => p.name === 'Functional Fitness');
+    const fresh = createFunctionalFitnessPlan();
+    if (ffIndex >= 0) {
+      updated[ffIndex] = { ...fresh, id: updated[ffIndex].id };
+    } else {
+      updated.push(fresh);
     }
   }
 
