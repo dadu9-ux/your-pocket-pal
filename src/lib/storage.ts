@@ -7,19 +7,17 @@ const PROGRESS_KEY = 'kp_progress';
 const ACTIVE_PLAN_KEY = 'kp_active_plan';
 const MIGRATION_KEY = 'kp_migration_version';
 
-const CURRENT_MIGRATION = 3; // bump this when adding new seed plans
+const CURRENT_MIGRATION = 4; // bump this when adding new seed plans
 
 function runMigrations(plans: WorkoutPlan[]): WorkoutPlan[] {
   const version = parseInt(localStorage.getItem(MIGRATION_KEY) || '0', 10);
   let updated = [...plans];
 
   if (version < 2) {
-    // Migration 2: ensure Functional Fitness plan exists
     const hasFunctional = updated.some(p => p.name === 'Functional Fitness');
     if (!hasFunctional) {
       updated.push(createFunctionalFitnessPlan());
     }
-    // Also update the Kettlebell Power plan with latest exercises
     const kbIndex = updated.findIndex(p => p.name === 'Kettlebell Power - Basic');
     if (kbIndex >= 0) {
       const fresh = createDefaultPlan();
@@ -27,8 +25,8 @@ function runMigrations(plans: WorkoutPlan[]): WorkoutPlan[] {
     }
   }
 
-  if (version < 3) {
-    // Migration 3: rebuild Functional Fitness plan (9-week cycle with deload + new recovery + rotating Sat swims)
+  if (version < 4) {
+    // Rebuild Functional Fitness with the latest structure
     const ffIndex = updated.findIndex(p => p.name === 'Functional Fitness');
     const fresh = createFunctionalFitnessPlan();
     if (ffIndex >= 0) {
